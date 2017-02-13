@@ -15,5 +15,64 @@
         document.getElementById('example')
     );
 </script>
+<!-- 自定义组件 -->
+<script type="text/babel">
+    /*var HelloMessage = React.createClass({
+        render: function() {
+            return <h1>Hello World1！</h1>;
+        }
+    });
+
+    ReactDOM.render(
+            <HelloMessage />,
+        document.getElementById('example')
+    );*/
+   /* var HelloMessage = React.createClass({
+        render: function() {
+            return <h1>Hello {this.props.name}</h1>;
+        }
+    });
+
+    ReactDOM.render(
+            <HelloMessage name="Runoob" />,
+        document.getElementById('example')
+    );*/
+    var WebSite = React.createClass({
+        render: function() {
+            return (
+                    <div>
+                        <Name name={this.props.name} />
+                        <Link site={this.props.site} />
+                    </div>
+            );
+        }
+    });
+
+    var Name = React.createClass({
+        render: function() {
+            return (
+                    <h1>{this.props.name}</h1>
+            );
+        }
+    });
+
+    var Link = React.createClass({
+        render: function() {
+            return (
+                    <a href={this.props.site}>
+                        {this.props.site}
+                    </a>
+            );
+        }
+    });
+
+    React.render(
+            <WebSite name="菜鸟教程" site=" http://www.runoob.com" />,
+        document.getElementById('example')
+    );
+    //实例中 WebSite 组件使用了 Name 和 Link 组件来输出对应的信息，也就是说 WebSite 拥有 Name 和 Link 的实例。
+
+</script>
+
 </body>
 </html>
